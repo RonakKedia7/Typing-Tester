@@ -137,32 +137,14 @@ const App = () => {
       {/* PRESS ANY KEY TO START */}
       {startTest && startingMessage && !countDown && !goSignal && (
         <div className="min-h-screen flex flex-col items-center justify-center gradient-bg relative">
-          {/* Background decoration */}
-          <div className="absolute inset-0 opacity-20">
-            <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-float"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl animate-float" style={{animationDelay: '2s'}}></div>
-          </div>
-          
           <div className="text-center max-w-2xl mx-auto px-6">
-            <div className="gradient-border">
-              <div className="gradient-border-inner">
-                <div className="glass p-12 rounded-3xl">
-                  <div className="mb-8">
-                    <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-                      <span className="text-2xl">⌨️</span>
-                    </div>
-                    <p className="text-xl font-medium text-gray-300 mb-2">
-                      Get ready and keep your hands on the keyboard...
-                    </p>
-                  </div>
-                  <div className="relative">
-                    <p className="text-3xl font-bold text-gradient animate-pulse-glow">
-                      Press any key to start
-                    </p>
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-lg blur-xl"></div>
-                  </div>
-                </div>
-              </div>
+            <div className="glass p-12 rounded-3xl card-elevated border border-gray-600">
+              <p className="text-2xl font-medium text-gray-300 mb-8">
+                Get ready and keep your hands on the keyboard...
+              </p>
+              <p className="text-4xl font-bold text-gradient animate-pulse-glow">
+                Press any key to start
+              </p>
             </div>
           </div>
         </div>
@@ -170,65 +152,25 @@ const App = () => {
 
       {/* COUNTDOWN ANIMATION */}
       {startTest && startingMessage && countDown && (
-        <div className="min-h-screen flex flex-col items-center justify-center gradient-bg relative overflow-hidden">
-          {/* Enhanced background effects */}
-          <div className="absolute inset-0">
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500/30 rounded-full filter blur-3xl animate-pulse"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-purple-500/40 rounded-full filter blur-2xl animate-pulse" style={{animationDelay: '0.5s'}}></div>
-          </div>
-          
-          <div className="relative z-10 text-center">
-            <div className="gradient-border mb-8">
-              <div className="gradient-border-inner">
-                <div className="glass p-20 rounded-full">
-                  <p
-                    key={animationKey}
-                    className="text-8xl font-black text-gradient animate-countdown-pulse"
-                    style={{
-                      textShadow: '0 0 30px rgba(59, 130, 246, 0.8), 0 0 60px rgba(139, 92, 246, 0.6)',
-                      filter: 'drop-shadow(0 0 20px rgba(59, 130, 246, 0.5))'
-                    }}
-                  >
-                    {countDown}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <p className="text-xl text-gray-400 font-medium">Get ready...</p>
+        <div className="min-h-screen flex flex-col items-center justify-center gradient-bg relative">
+          <div className="glass p-16 rounded-full card-elevated">
+            <p
+              key={animationKey}
+              className="text-9xl font-extrabold text-gradient animate-scale-up-down text-glow"
+            >
+              {countDown}
+            </p>
           </div>
         </div>
       )}
 
       {/* GO SIGNAL */}
       {startTest && startingMessage && goSignal && (
-        <div className="min-h-screen flex flex-col items-center justify-center gradient-bg relative overflow-hidden">
-          {/* Enhanced background effects for GO */}
-          <div className="absolute inset-0">
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-green-500/30 rounded-full filter blur-3xl animate-pulse"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-emerald-500/40 rounded-full filter blur-2xl animate-pulse" style={{animationDelay: '0.3s'}}></div>
-          </div>
-          
-          <div className="relative z-10 text-center">
-            <div className="gradient-border mb-8">
-              <div className="gradient-border-inner">
-                <div className="glass p-20 rounded-full bg-gradient-to-br from-green-900/20 to-emerald-900/20">
-                  <p 
-                    className="text-8xl font-black animate-go"
-                    style={{
-                      background: 'linear-gradient(135deg, #10b981, #059669, #34d399)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      backgroundClip: 'text',
-                      textShadow: '0 0 30px rgba(16, 185, 129, 0.8), 0 0 60px rgba(5, 150, 105, 0.6)',
-                      filter: 'drop-shadow(0 0 20px rgba(16, 185, 129, 0.7))'
-                    }}
-                  >
-                    GO!
-                  </p>
-                </div>
-              </div>
-            </div>
-            <p className="text-xl text-green-400 font-bold animate-pulse">Start typing now!</p>
+        <div className="min-h-screen flex flex-col items-center justify-center gradient-bg relative">
+          <div className="glass p-16 rounded-full card-elevated">
+            <p className="text-9xl font-extrabold btn-success bg-clip-text text-transparent animate-scale-up-down text-glow">
+              Go!
+            </p>
           </div>
         </div>
       )}

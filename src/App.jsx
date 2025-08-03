@@ -136,13 +136,13 @@ const App = () => {
 
       {/* PRESS ANY KEY TO START */}
       {startTest && startingMessage && !countDown && !goSignal && (
-        <div className="min-h-screen flex flex-col gap-12 items-center justify-center gradient-bg relative">
-          <div className="text-center space-y-8">
-            <div className="glass p-8 rounded-3xl card-elevated">
-              <p className="text-3xl font-medium text-gray-300 mb-6">
+        <div className="min-h-screen flex flex-col items-center justify-center gradient-bg relative">
+          <div className="text-center max-w-2xl mx-auto px-6">
+            <div className="glass p-12 rounded-3xl card-elevated border border-gray-600">
+              <p className="text-2xl font-medium text-gray-300 mb-8">
                 Get ready and keep your hands on the keyboard...
               </p>
-              <p className="text-5xl font-bold text-gradient animate-pulse-glow">
+              <p className="text-4xl font-bold text-gradient animate-pulse-glow">
                 Press any key to start
               </p>
             </div>

@@ -27,11 +27,15 @@ const TimeLeft = ({ duration }) => {
   }, [duration]);
 
   return (
-    <div className="flex justify-center items-center mt-10">
-      <div className="bg-gray-700 flex gap-5 px-4 py-3 rounded-2xl text-center text-gray-100 border border-gray-600">
-        <Hourglass className="text-yellow-500 " />
-        <p className="text-xl">
-          Time left: <span>{formatTime(timeLeft)}</span>
+    <div className="flex justify-center items-center mt-8 mb-8 relative z-10">
+      <div className="glass flex items-center gap-4 px-8 py-4 rounded-2xl card-elevated border border-gray-600">
+        <div className="relative">
+          <Hourglass className="text-yellow-400 size-6 animate-float" />
+          <div className="absolute inset-0 size-6 bg-yellow-400 rounded-full opacity-20 animate-pulse"></div>
+        </div>
+        <p className="text-2xl font-semibold">
+          <span className="text-gray-300">Time left:</span> 
+          <span className="text-yellow-400 font-mono ml-2 text-glow">{formatTime(timeLeft)}</span>
         </p>
       </div>
     </div>

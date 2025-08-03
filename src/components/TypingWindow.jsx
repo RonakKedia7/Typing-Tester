@@ -161,14 +161,15 @@ const TypingWindow = ({ duration }) => {
   return (
     <>
       {!showResult && (
-        <div className="w-full lg:w-[80%] flex flex-col mt-15 text-[30px] px-10 bg-gray-700 gap-5 py-5 rounded-2xl text-center text-gray-700 border border-gray-600">
+        <div className="w-full max-w-6xl mx-auto relative z-10">
+          <div className="glass p-8 rounded-3xl card-elevated border border-gray-600">
           {texts.slice(0, 6).map((paragraph, index) => (
             <div
               key={index}
-              className={`p-6 font-mono ${
+              className={`p-6 font-mono text-lg leading-relaxed transition-all duration-300 ${
                 index === currentTextIndex
-                  ? "bg-gray-600 text-gray-300 rounded-xl"
-                  : "text-gray-600"
+                  ? "glass text-gray-200 rounded-2xl border border-gray-500 shadow-lg"
+                  : "text-gray-500 opacity-60"
               }`}
             >
               {paragraph.split("").map((letter, letterIndex) => (
@@ -176,11 +177,11 @@ const TypingWindow = ({ duration }) => {
                   key={letterIndex}
                   className={`${
                     index === currentTextIndex && letterIndex === currentIdx
-                      ? "font-semibold text-blue-400 bg-blue-950"
+                      ? "typing-char-current font-semibold"
                       : index === currentTextIndex && letterIndex < currentIdx
                       ? charStatuses[letterIndex]
-                        ? "text-green-400 bg-green-950"
-                        : "text-red-400 bg-red-950"
+                        ? "typing-char-correct"
+                        : "typing-char-incorrect"
                       : ""
                   }`}
                 >
@@ -189,21 +190,51 @@ const TypingWindow = ({ duration }) => {
               ))}
             </div>
           ))}
+          </div>
         </div>
       )}
 
       {showResult && (
-        <div className="w-full lg:w-[80%] h-[500px] flex flex-col items-center justify-center mt-15 text-2xl px-10 bg-gray-700 gap-5 py-5 rounded-2xl text-center text-gray-200 border border-gray-600">
-          <div className="flex flex-col items-start text-4xl gap-10">
-            <p>
-              ✅ <strong>WPM:</strong> {results.wpm}
-            </p>
-            <p>
-              🎯 <strong>Accuracy:</strong> {results.accuracy}%
-            </p>
-            <p>
-              ⌛ <strong>Time:</strong> {formatTime(duration)}
-            </p>
+        <div className="w-full max-w-4xl mx-auto relative z-10">
+          <div className="glass p-12 rounded-3xl card-elevated border border-gray-600 text-center">
+            <h2 className="text-4xl font-bold text-gradient mb-12">Test Results</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="glass p-8 rounded-2xl border border-gray-600 card-elevated">
+                <div className="text-6xl mb-4">⚡</div>
+                <div className="text-5xl font-bold text-blue-400 mb-2">{results.wpm}</div>
+                <div className="text-xl text-gray-300 font-medium">Words Per Minute</div>
+              </div>
+              
+              <div className="glass p-8 rounded-2xl border border-gray-600 card-elevated">
+                <div className="text-6xl mb-4">🎯</div>
+                <div className="text-5xl font-bold text-green-400 mb-2">{results.accuracy}%</div>
+                <div className="text-xl text-gray-300 font-medium">Accuracy</div>
+              </div>
+              
+              <div className="glass p-8 rounded-2xl border border-gray-600 card-elevated">
+                <div className="text-6xl mb-4">⏱️</div>
+                <div className="text-5xl font-bold text-yellow-400 mb-2">{formatTime(duration)}</div>
+                <div className="text-xl text-gray-300 font-medium">Duration</div>
+              </div>
+            </div>
+            
+            <div className="mt-12 p-6 glass rounded-2xl border border-gray-600">
+              <h3 className="text-2xl font-semibold text-gray-200 mb-4">Performance Summary</h3>
+              <div className="flex justify-center items-center gap-8 text-lg">
+                <span className="text-gray-300">
+                  <strong className="text-blue-400">{correctCharCount}</strong> correct characters
+                </span>
+                <span className="text-gray-500">•</span>
+                <span className="text-gray-300">
+                  <strong className="text-red-400">{totalTyped - correctCharCount}</strong> errors
+                </span>
+                <span className="text-gray-500">•</span>
+                <span className="text-gray-300">
+                  <strong className="text-yellow-400">{totalTyped}</strong> total typed
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       )}

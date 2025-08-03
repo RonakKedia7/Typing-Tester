@@ -148,7 +148,7 @@ const App = () => {
               <p className="text-2xl font-medium text-gray-300 mb-8">
                 Get ready and keep your hands on the keyboard...
               </p>
-              <p className="text-4xl font-bold text-gradient animate-pulse-glow">
+              <p className="text-4xl font-bold text-gradient animate-pulse">
                 Press any key to start
               </p>
             </div>

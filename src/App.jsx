@@ -253,62 +253,6 @@ const App = () => {
           </button>
         </div>
       )}
-              <p className="text-2xl font-medium text-gray-300 mb-8">
-                Get ready and keep your hands on the keyboard...
-              </p>
-              <p className="text-4xl font-bold text-gradient animate-pulse-glow">
-                Press any key to start
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* COUNTDOWN ANIMATION */}
-      {startTest && startingMessage && countDown && (
-        <div className="min-h-screen flex flex-col items-center justify-center gradient-bg relative">
-          <div className="glass p-16 rounded-full card-elevated">
-            <p
-              key={animationKey}
-              className="text-9xl font-extrabold text-gradient animate-scale-up-down text-glow"
-            >
-              {countDown}
-            </p>
-          </div>
-        </div>
-      )}
-
-      {/* GO SIGNAL */}
-      {startTest && startingMessage && goSignal && (
-        <div className="min-h-screen flex flex-col items-center justify-center gradient-bg relative">
-          <div className="glass p-16 rounded-full card-elevated">
-            <p className="text-9xl font-extrabold btn-success bg-clip-text text-transparent animate-scale-up-down text-glow">
-              Go!
-            </p>
-          </div>
-        </div>
-      )}
-
-      {/* ACTUAL TEST */}
-      {startTest && !startingMessage && !countDown && !goSignal && (
-        <div className="flex flex-col items-center gradient-bg px-6 min-h-screen relative">
-          {/* Background decoration for test screen */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-10 right-10 w-32 h-32 bg-blue-500 rounded-full filter blur-2xl"></div>
-            <div className="absolute bottom-10 left-10 w-32 h-32 bg-purple-500 rounded-full filter blur-2xl"></div>
-          </div>
-          
-          <Header />
-          <TimeLeft duration={duration} />
-          <TypingWindow duration={duration} />
-          <button
-            onClick={resetTest}
-            className="mt-16 mb-8 btn-secondary px-8 py-4 text-lg font-bold rounded-2xl transition-all duration-300 transform hover:scale-105 relative z-10"
-          >
-            Reset Test
-          </button>
-        </div>
-      )}
     </>
   );
 };

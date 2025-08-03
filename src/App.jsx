@@ -85,7 +85,6 @@ const App = () => {
           {/* Background decoration */}
           <div className="absolute inset-0 opacity-20">
             <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-float"></div>
-<<<<<<< HEAD
             <div
               className="absolute top-40 right-20 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl animate-float"
               style={{ animationDelay: "2s" }}
@@ -96,31 +95,17 @@ const App = () => {
             ></div>
           </div>
 
-=======
-            <div className="absolute top-40 right-20 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl animate-float" style={{animationDelay: '2s'}}></div>
-            <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl animate-float" style={{animationDelay: '4s'}}></div>
-          </div>
-          
->>>>>>> 299921128424b375134a112a08724dc1efdd3f23
           <div className="relative z-10 text-center">
             <h1 className="text-6xl font-bold text-gradient mb-4 animate-float">
               Typing Speed Tester
             </h1>
             <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
-<<<<<<< HEAD
               Test your typing speed and accuracy with our professional typing
               test. Choose your preferred duration and start improving your
               skills.
             </p>
           </div>
 
-=======
-              Test your typing speed and accuracy with our professional typing test. 
-              Choose your preferred duration and start improving your skills.
-            </p>
-          </div>
-          
->>>>>>> 299921128424b375134a112a08724dc1efdd3f23
           <div className="relative z-10 flex flex-col items-center gap-8">
             <div className="gradient-border">
               <div className="gradient-border-inner p-6">
@@ -142,11 +127,6 @@ const App = () => {
                 </select>
               </div>
             </div>
-<<<<<<< HEAD
-
-=======
-            
->>>>>>> 299921128424b375134a112a08724dc1efdd3f23
             <button
               onClick={() => {
                 setStartTest(true);
@@ -209,11 +189,6 @@ const App = () => {
             <div className="absolute top-10 right-10 w-32 h-32 bg-blue-500 rounded-full filter blur-2xl"></div>
             <div className="absolute bottom-10 left-10 w-32 h-32 bg-purple-500 rounded-full filter blur-2xl"></div>
           </div>
-<<<<<<< HEAD
-
-=======
-          
->>>>>>> 299921128424b375134a112a08724dc1efdd3f23
           <Header />
           <TimeLeft duration={duration} />
           <TypingWindow duration={duration} />

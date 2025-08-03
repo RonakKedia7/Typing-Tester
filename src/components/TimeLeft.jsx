@@ -34,15 +34,10 @@ const TimeLeft = ({ duration }) => {
           <div className="absolute inset-0 size-6 bg-yellow-400 rounded-full opacity-20 animate-pulse"></div>
         </div>
         <p className="text-2xl font-semibold">
-<<<<<<< HEAD
           <span className="text-gray-300">Time left:</span>
           <span className="text-yellow-400 font-mono ml-2 text-glow">
             {formatTime(timeLeft)}
           </span>
-=======
-          <span className="text-gray-300">Time left:</span> 
-          <span className="text-yellow-400 font-mono ml-2 text-glow">{formatTime(timeLeft)}</span>
->>>>>>> 299921128424b375134a112a08724dc1efdd3f23
         </p>
       </div>
     </div>

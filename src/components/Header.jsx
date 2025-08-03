@@ -3,11 +3,20 @@ import { KeyboardIcon } from "lucide-react";
 
 const Header = () => {
   return (
-    <div className="flex w-full items-center justify-center gap-5 text-4xl mt-10 ">
-      <p className="bg-gray-700 font-mono flex gap-5 px-4 py-3 rounded-2xl text-center text-gray-100 border border-gray-600">
-        <KeyboardIcon className="size-10 text-red-500" />
-        Typing Speed Tester
-      </p>
+    <div className="flex w-full items-center justify-center mt-8 mb-4 relative z-10">
+      <div className="gradient-border">
+        <div className="gradient-border-inner">
+          <div className="glass flex items-center gap-6 px-8 py-6 rounded-2xl">
+            <div className="relative">
+              <KeyboardIcon className="size-12 text-blue-400 animate-float" />
+              <div className="absolute inset-0 size-12 bg-blue-400 rounded-full opacity-20 animate-pulse"></div>
+            </div>
+            <h1 className="text-4xl font-bold text-gradient">
+              Typing Speed Tester
+            </h1>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
